@@ -1,8 +1,5 @@
 FROM phpdockerio/php72-fpm:latest
 
-# Use Local Mirror hk.archive.ubuntu.com 
-RUN sed -i -e "s/archive/hk\.archive/" /etc/apt/sources.list
-
 # Copy wkhtmltopdf deb
 ADD https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.bionic_amd64.deb /tmp/wkhtmltox_0.12.5-1.bionic_amd64.deb
 
@@ -15,6 +12,3 @@ RUN export DEBIAN_FRONTEND=noninteractive \
 	# PDF Chinese Font
     && apt-get -y --no-install-recommends install  fonts-wqy-zenhei \
     && apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
-
-# php-ini-overrides.ini
-#ADD php-ini-overrides.ini /etc/php/7.2/fpm/conf.d/99-overrides.ini
