@@ -17,4 +17,4 @@ RUN export DEBIAN_FRONTEND=noninteractive \
     && apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 
 # php-ini-overrides.ini
-ADD php-ini-overrides.ini /etc/php/7.2/fpm/conf.d/99-overrides.ini
+#ADD php-ini-overrides.ini /etc/php/7.2/fpm/conf.d/99-overrides.ini
